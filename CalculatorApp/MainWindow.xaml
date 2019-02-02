@@ -4,9 +4,69 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CalculatorApp"
+        xmlns:calculator="clr-namespace:Calculator;assembly=ClassLibrary1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Calculator" Height="450" Width="300">
+    <Window.Resources>
+        <calculator:Calculator x:Key="myCalc" x:Name="myCalc"/>
+    </Window.Resources>
+
+    <Border>
+        <StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <TextBox FontSize="20" HorizontalContentAlignment="Right" Margin="5 5 5 5" Name="Text_Box"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <Button Margin="5 5 5 5" Grid.Column="0" Grid.Row="0" Content="Clear" Click="Click_Clear"/>
+                <Button FontSize="20" Margin="5 5 5 5" Grid.Column="1" Grid.Row="0" Content="«" Click="Click_Backspace"/>
+                <Button FontSize="26" Margin="5 5 5 5" Grid.Column="2" Grid.Row="0" Content="÷" Click="Click_Operation"/>
+
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <Button FontSize="20" Margin="5 5 5 5" Grid.Column="0" Grid.Row="3" Content="±" Click="Click_PlusMinus"/>
+                <Button Margin="5 5 5 5" Grid.Column="1" Grid.Row="3" Content="0" Click="Click_Num"/>
+                <Button FontSize="20" Margin="5 5 5 5" Grid.Column="2" Grid.Row="3" Content="." Click="Click_Decimal"/>
+                <Button Margin="5 5 5 5" Grid.Column="0" Grid.Row="2" Content="1" Click="Click_Num"/>
+                <Button Margin="5 5 5 5" Grid.Column="1" Grid.Row="2" Content="2" Click="Click_Num"/>
+                <Button Margin="5 5 5 5" Grid.Column="2" Grid.Row="2" Content="3" Click="Click_Num"/>
+                <Button Margin="5 5 5 5" Grid.Column="0" Grid.Row="1" Content="4" Click="Click_Num"/>
+                <Button Margin="5 5 5 5" Grid.Column="1" Grid.Row="1" Content="5" Click="Click_Num"/>
+                <Button Margin="5 5 5 5" Grid.Column="2" Grid.Row="1" Content="6" Click="Click_Num"/>
+                <Button Margin="5 5 5 5" Grid.Column="0" Grid.Row="0" Content="7" Click="Click_Num"/>
+                <Button Margin="5 5 5 5" Grid.Column="1" Grid.Row="0" Content="8" Click="Click_Num"/>
+                <Button Margin="5 5 5 5" Grid.Column="2" Grid.Row="0" Content="9" Click="Click_Num"/>
+
+                <Button Margin="5 5 5 5" Grid.Column="3" Grid.Row="0" Content="X" Click="Click_Operation"/>
+                <Button FontSize="26" Margin="5 5 5 5" Grid.Column="3" Grid.Row="1" Content="-" Click="Click_Operation"/>
+                <Button FontSize="20" Margin="5 5 5 5" Grid.Column="3" Grid.Row="2" Content="+" Click="Click_Operation"/>
+                <Button FontSize="20" Margin="5 5 5 5" Grid.Column="3" Grid.Row="3" Content="=" Click="Click_Equals"/>
+            </Grid>
+        </StackPanel>
+    </Border>
+    
 </Window>
